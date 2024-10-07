@@ -12,15 +12,15 @@
 
 #include "push_swap.h"
 
-int	ft_ra(t_stack *a)
+void	ft_ra(t_stack *a)
 {
 }
 
-int	ft_rb(t_stack *b)
+void	ft_rb(t_stack *b)
 {
 }
 
-int	ft_rr(t_stack *a, t_stack *b)
+void	ft_rr(t_stack *a, t_stack *b)
 {
 	ft_ra(a);
 	ft_rb(b);

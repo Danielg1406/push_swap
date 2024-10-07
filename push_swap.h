@@ -18,6 +18,7 @@ typedef struct s_node
 	int			data;
 	int			position;
 	struct s_node		*next;
+	struct s_node		*previous;
 }				t_node;
 
 typedef struct s_stack
