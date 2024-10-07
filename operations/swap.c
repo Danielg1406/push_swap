@@ -21,6 +21,7 @@ void	ft_sa(t_stack *a)
 	temp = a;
 	a = a->next;
 	a->next = temp;
+	ft_putstr("sa\n");
 }
 
 void	ft_sb(t_stack *b)
@@ -32,6 +33,7 @@ void	ft_sb(t_stack *b)
 	temp = b;
 	b = b->next;
 	b->next = temp;
+	ft_putstr("sb\n");
 }
 
 void	ft_ss(t_stack *a, t_stack *b)

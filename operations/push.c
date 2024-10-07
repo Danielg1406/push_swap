@@ -17,6 +17,7 @@ void	ft_pa(t_stack *a, t_stack *b)
 	ft_lstadd_front(&a->top, &b->top);
 	ft_lstdelone(&a->top);
 	a->top = a->top->next;
+	ft_putstr("pa\n");
 }
 
 void	ft_pb(t_stack *b, t_stack *a)
@@ -24,4 +25,5 @@ void	ft_pb(t_stack *b, t_stack *a)
 	ft_lstadd_front(&b->top, &a->top);
 	ft_lstdelone(&b->top);
 	b->top = b->top->next;
+	ft_putstr("pb\n");
 }

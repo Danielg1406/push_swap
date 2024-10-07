@@ -14,14 +14,17 @@
 
 void	ft_rra(t_stack *a)
 {
+	ft_putstr("rra\n");
 }
 
 void	ft_rrb(t_stack *b)
 {
+	ft_putstr("rrb\n");
 }
 
 void	ft_rrr(t_stack *a, t_stack *b)
 {
 	ft_rra(a);
 	ft_rrb(b);
+	ft_putstr("rrr\n");
 }
