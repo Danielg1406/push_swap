@@ -30,9 +30,9 @@ int	main(void)
 	printf("stack b \n");
 	ft_print_stack(b);
 
-	ft_ra(a);
-	ft_rb(b);
-	ft_rr(a, b);
+	ft_sa(a);
+	ft_sb(b);
+	ft_ss(a, b);
 
 	printf("new stack a\n");
 	ft_print_stack(a);
