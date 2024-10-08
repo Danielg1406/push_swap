@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/04 17:48:15 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:48:14 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 
 #include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct s_node
 {
@@ -28,4 +30,25 @@ typedef struct s_stack
 	struct s_node	*top;
 	struct s_node	*bottom;
 }			t_stack;
+
+// UTILS
+void	ft_free_stack(t_node *top, t_node *bottom);
+void	ft_delete_node(t_node *node);
+void	ft_insert_beggining(t_node **top, int value);
+void	ft_insert_end(t_node **bottom, int value);
+void	ft_init_stack(t_node **top, t_node **bottom, int value);
+void	ft_print_stack(t_stack *stack);
+
+//OPERATIONS
+void	ft_sa(t_stack *a);
+void	ft_sb(t_stack *b);
+void	ft_ss(t_stack *a, t_stack *b);
+void	ft_pa(t_stack *a, t_stack *b);
+void	ft_pb(t_stack *b, t_stack *a);
+void	ft_ra(t_stack *a);
+void	ft_rb(t_stack *b);
+void	ft_rr(t_stack *a, t_stack *b);
+void	ft_rra(t_stack *a);
+void	ft_rrb(t_stack *b);
+void	ft_rrr(t_stack *a, t_stack *b);
 #endif

@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:09:31 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/04 19:42:43 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:22:00 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_sa(t_stack *a)
 
 	if (!a)
 		return;
-	temp = a;
-	a = a->next;
-	a->next = temp;
-	ft_putstr("sa\n");
+	temp = a->top;
+	a->top = a->top->next;
+	a->top->next = temp;
+	printf("sa\n");
 }
 
 void	ft_sb(t_stack *b)
@@ -30,10 +30,10 @@ void	ft_sb(t_stack *b)
 
 	if (!b)
 		return;
-	temp = b;
-	b = b->next;
-	b->next = temp;
-	ft_putstr("sb\n");
+	temp = b->top;
+	b->top = b->top->next;
+	b->top->next = temp;
+	printf("sb\n");
 }
 
 void	ft_ss(t_stack *a, t_stack *b)
@@ -42,5 +42,6 @@ void	ft_ss(t_stack *a, t_stack *b)
 		return;
 	ft_sa(a);
 	ft_sb(b);
+	printf("ss");
 	return;
 }
