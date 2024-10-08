@@ -6,24 +6,24 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/08 13:48:14 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:37:15 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
+# include "libft.h"
+# include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_node
 {
-	int			data;
-	int			position;
-	struct s_node		*next;
-	struct s_node		*previous;
-}				t_node;
+	int				data;
+	int				position;
+	struct s_node	*next;
+	struct s_node	*previous;
+}			t_node;
 
 typedef struct s_stack
 {

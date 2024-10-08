@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:09:31 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/08 16:13:36 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:31:52 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	ft_sa(t_stack *a)
 {
-	t_node *temp;	
+	t_node	*temp;
+
 	if (!a || !a->top || !a->top->next)
-		return;
+		return ;
 	temp = a->top;
 	a->top = a->top->next;
 	temp->next = a->top->next;
-	if(a->top->next)
+	if (a->top->next)
 		a->top->next->previous = temp;
 	a->top->previous = NULL;
 	a->top->next = temp;
@@ -33,11 +34,11 @@ void	ft_sb(t_stack *b)
 	t_node	*temp;
 
 	if (!b || !b->top || !b->top->next)
-		return;
+		return ;
 	temp = b->top;
 	b->top = b->top->next;
 	temp->next = b->top->next;
-	if(b->top->next)
+	if (b->top->next)
 		b->top->next->previous = temp;
 	b->top->previous = NULL;
 	b->top->next = temp;
@@ -48,9 +49,8 @@ void	ft_sb(t_stack *b)
 void	ft_ss(t_stack *a, t_stack *b)
 {
 	if (!a || !b)
-		return;
+		return ;
 	ft_sa(a);
 	ft_sb(b);
 	printf("ss");
-	return;
 }

@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:27:15 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/08 17:04:33 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:32:29 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 void	ft_pa(t_stack *a, t_stack *b)
 {
 	t_node	*new_top;
-	if(!b || !b->top || !a)
-		return;
+
+	if (!b || !b->top || !a)
+		return ;
 	new_top = b->top;
 	b->top = new_top->next;
 	b->top->previous = NULL;
@@ -28,8 +29,9 @@ void	ft_pa(t_stack *a, t_stack *b)
 void	ft_pb(t_stack *b, t_stack *a)
 {
 	t_node	*new_top;
-	if(!a || !a->top || !b)
-		return;
+
+	if (!a || !a->top || !b)
+		return ;
 	new_top = a->top;
 	a->top = new_top->next;
 	a->top->previous = NULL;
