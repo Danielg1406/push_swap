@@ -8,6 +8,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 OPERATIONS_DIR = operations
 UTILS_DIR = utils
+PARSING_DIR = parsing
 
 HEADER = push_swap.h
 
@@ -17,7 +18,8 @@ SRCS = main.c \
        $(OPERATIONS_DIR)/swap.c \
        $(OPERATIONS_DIR)/rotate.c \
        $(OPERATIONS_DIR)/reverse_rotate.c \
-       $(UTILS_DIR)/utils.c
+       $(UTILS_DIR)/utils.c \
+       $(PARSING_DIR)/parsing.c
 
 # Generate object files from source files
 OBJS = $(SRCS:%.c=%.o)

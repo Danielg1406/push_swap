@@ -1,42 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 12:42:26 by dgomez-a          #+#    #+#             */
+/*   Updated: 2024/10/09 12:53:51 by dgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int	main(void)
-{
+int	main(int argc, char **argv)
+{	
+	int	i = 0;
+	int	*parsed_values;
 	t_stack *a;
 	t_stack *b;
 
+	if(argc < 2)
+	{
+		ft_putendl_fd("Error\n", 2);
+		return (1);
+	}
 	a = malloc(sizeof(t_stack));
 	b = malloc(sizeof(t_stack));
-
 	a->top = NULL;
 	a->bottom = NULL;
 	b->top = NULL;
 	b->bottom = NULL;
 
-	ft_init_stack(&a->top, &a->bottom, 4);
-	ft_init_stack(&b->top, &b->bottom, 8);
-
-	ft_insert_beggining(&a->top, 3);
-	ft_insert_beggining(&a->top, 2);
-	ft_insert_beggining(&a->top, 1);
-
-	ft_insert_beggining(&b->top, 7);
-	ft_insert_beggining(&b->top, 6);
-	ft_insert_beggining(&b->top, 5);
-
-
-	printf("stack a \n");
-	ft_print_stack(a);
-	printf("stack b \n");
-	ft_print_stack(b);
-
-	ft_rra(a);
-	ft_rrb(b);
-	ft_rrr(a, b);
-
-	printf("new stack a\n");
-	ft_print_stack(a);
-	printf("new stack b\n");
-	ft_print_stack(b);
-	return(0);
+	parsed_values = malloc((argc - 1) * sizeof(int));
+	if (!parsed_values || !ft_parse_and_check_input(argc, argv, parsed_values))
+		return (1);
+	printf("passed check\n");
+	while (i < argc - 1)
+	{
+		printf("%d\n", parsed_values[i]);
+		i++;
+	}
+	free(parsed_values);
+	return (0);
 }
