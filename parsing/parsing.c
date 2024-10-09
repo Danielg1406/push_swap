@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:44:36 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/09 14:39:17 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:41:36 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_parse_int(const char *str, int *result)
 {
 	long	temp;
 
-	if(!ft_atol(str, &temp))
+	if (!ft_atol(str, &temp))
 		return (0);
 	*result = (int)temp;
 	return (1);
