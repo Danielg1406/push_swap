@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:42:26 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/09 12:53:51 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/09 13:53:06 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 
 	if(argc < 2)
 	{
-		ft_putendl_fd("Error\n", 2);
+		ft_putendl_fd("", 2);
 		return (1);
 	}
 	a = malloc(sizeof(t_stack));

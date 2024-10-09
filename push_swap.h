@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/09 12:51:11 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:31:46 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	ft_insert_beggining(t_node **top, int value);
 void	ft_insert_end(t_node **bottom, int value);
 void	ft_init_stack(t_node **top, t_node **bottom, int value);
 void	ft_print_stack(t_stack *stack);
+int		ft_atol(const char *str, long *result);
 
 //OPERATIONS
 void	ft_sa(t_stack *a);

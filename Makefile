@@ -14,12 +14,13 @@ HEADER = push_swap.h
 
 # List all source files from the main directory, operations, and utils
 SRCS = main.c \
-       $(OPERATIONS_DIR)/push.c \
-       $(OPERATIONS_DIR)/swap.c \
-       $(OPERATIONS_DIR)/rotate.c \
-       $(OPERATIONS_DIR)/reverse_rotate.c \
-       $(UTILS_DIR)/utils.c \
-       $(PARSING_DIR)/parsing.c
+      	$(OPERATIONS_DIR)/push.c \
+      	$(OPERATIONS_DIR)/swap.c \
+      	$(OPERATIONS_DIR)/rotate.c \
+   	$(OPERATIONS_DIR)/reverse_rotate.c \
+      	$(UTILS_DIR)/utils.c \
+	$(UTILS_DIR)/utils2.c \
+       	$(PARSING_DIR)/parsing.c
 
 # Generate object files from source files
 OBJS = $(SRCS:%.c=%.o)
