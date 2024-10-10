@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 11:07:56 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:25:40 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int		ft_parse_int(const char *str, int *result);
 int		ft_is_duplicate_in_input(int *parsed_values, int index, int value);
 int		ft_error(int *parsed_values);
 int		ft_parse_and_check_input(int argc, char **argv, int *parsed_values);
+int		ft_initialize(t_stack **a, t_stack **b, int *parsed_values, 
+			int array_len);
 
 //CHECKER
 int		ft_input_is_sorted(int *parsed_values, int array_len);

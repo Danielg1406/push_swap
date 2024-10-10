@@ -22,6 +22,7 @@ SRCS = main.c \
       	$(UTILS_DIR)/utils.c \
 	$(UTILS_DIR)/utils2.c \
        	$(PARSING_DIR)/parsing.c \
+	$(PARSING_DIR)/initialize.c \
 	$(CHECKER_DIR)/checker.c
 
 # Generate object files from source files

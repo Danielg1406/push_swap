@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 10:15:43 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 12:26:17 by dgomez-a         ###   ########.fr       */
+/*   Created: 2024/10/10 11:40:13 by dgomez-a          #+#    #+#             */
+/*   Updated: 2024/10/10 12:24:19 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_input_is_sorted(int *parsed_values, int array_len)
+int	ft_initialize(t_stack **a, t_stack **b, int *parsed_values, int array_len)
 {
 	int	i;
 
-	i = 0;
-	while (i < array_len - 1)
+	*a = malloc(sizeof(t_stack));
+	*b = malloc(sizeof(t_stack));
+	(*a)->top = NULL;
+	(*a)->bottom = NULL;
+	(*b)->top = NULL;
+	(*b)->bottom = NULL;
+	printf("initializing stack\n");
+	ft_init_stack(&(*a)->top, &(*a)->bottom, parsed_values[0]);
+	printf("addid new nodes\n");
+	i = 1;
+	while (i < array_len)
 	{
-		if (ft_ascending(parsed_values[i], parsed_values[i + 1]) == 0)
-			return (0);
+		ft_insert_end(&(*a)->bottom, parsed_values[i]);
 		i++;
 	}
-	return (1);
+	return (0);
 }

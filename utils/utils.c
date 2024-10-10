@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:21:55 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/08 17:41:47 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:37:45 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,17 @@ void	ft_insert_end(t_node **bottom, int value)
 		return ;
 	new->data = value;
 	new->next = NULL;
-	new->previous = *bottom;
-	(*bottom)->next = new;
-	*bottom = new;
+	if(*bottom == NULL)
+	{
+		new->previous = NULL;
+		*bottom = new;
+	}
+	else
+	{
+		new->previous = *bottom;
+		(*bottom)->next = new;
+		*bottom = new;
+	}
 }
 
 void	ft_init_stack(t_node **top, t_node **bottom, int value)
@@ -68,6 +76,8 @@ void	ft_print_stack(t_stack *stack)
 {
 	t_node	*cur;
 
+	if (!stack)
+		return ;
 	cur = stack->top;
 	while (cur)
 	{
