@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:40:13 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 12:24:19 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/10 13:53:51 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ int	ft_initialize(t_stack **a, t_stack **b, int *parsed_values, int array_len)
 	(*a)->bottom = NULL;
 	(*b)->top = NULL;
 	(*b)->bottom = NULL;
-	printf("initializing stack\n");
 	ft_init_stack(&(*a)->top, &(*a)->bottom, parsed_values[0]);
-	printf("addid new nodes\n");
 	i = 1;
 	while (i < array_len)
 	{
