@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:21:55 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 15:48:37 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:26:51 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_insert_end(t_node **bottom, int value, int position)
 	new->data = value;
 	new->position = position;
 	new->next = NULL;
-	if(*bottom == NULL)
+	if (*bottom == NULL)
 	{
 		new->previous = NULL;
 		*bottom = new;
