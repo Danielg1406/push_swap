@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:21:55 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 12:37:45 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/10 15:48:37 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_delete_node(t_node *node)
 	free(node);
 }
 
-void	ft_insert_beggining(t_node **top, int value)
+void	ft_insert_beggining(t_node **top, int value, int position)
 {
 	t_node	*new;
 
@@ -29,6 +29,7 @@ void	ft_insert_beggining(t_node **top, int value)
 	if (!new)
 		return ;
 	new->data = value;
+	new->position = position;
 	new->previous = NULL;
 	new->next = *top;
 	if (*top)
@@ -36,7 +37,7 @@ void	ft_insert_beggining(t_node **top, int value)
 	*top = new;
 }
 
-void	ft_insert_end(t_node **bottom, int value)
+void	ft_insert_end(t_node **bottom, int value, int position)
 {
 	t_node	*new;
 
@@ -44,6 +45,7 @@ void	ft_insert_end(t_node **bottom, int value)
 	if (!new)
 		return ;
 	new->data = value;
+	new->position = position;
 	new->next = NULL;
 	if(*bottom == NULL)
 	{
@@ -58,7 +60,7 @@ void	ft_insert_end(t_node **bottom, int value)
 	}
 }
 
-void	ft_init_stack(t_node **top, t_node **bottom, int value)
+void	ft_init_stack(t_node **top, t_node **bottom, int value, int position)
 {
 	t_node	*new;
 
@@ -66,6 +68,7 @@ void	ft_init_stack(t_node **top, t_node **bottom, int value)
 	if (!new)
 		return ;
 	new->data = value;
+	new->position = position;
 	new->previous = NULL;
 	new->next = NULL;
 	*top = new;
