@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:42:26 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/09 13:53:06 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:10:50 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,8 @@ int	main(int argc, char **argv)
 	t_stack *a;
 	t_stack *b;
 
-	if(argc < 2)
-	{
-		ft_putendl_fd("", 2);
+	if(argc < 3)
 		return (1);
-	}
 	a = malloc(sizeof(t_stack));
 	b = malloc(sizeof(t_stack));
 	a->top = NULL;
@@ -32,7 +29,7 @@ int	main(int argc, char **argv)
 	b->bottom = NULL;
 
 	parsed_values = malloc((argc - 1) * sizeof(int));
-	if (!parsed_values || !ft_parse_and_check_input(argc, argv, parsed_values))
+	if (!parsed_values || !ft_parse_and_check_input(argc, argv, parsed_values) || ft_input_is_sorted(parsed_values, argc - 1))
 		return (1);
 	printf("passed check\n");
 	while (i < argc - 1)

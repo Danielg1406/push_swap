@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/09 14:31:46 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:07:56 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	ft_insert_end(t_node **bottom, int value);
 void	ft_init_stack(t_node **top, t_node **bottom, int value);
 void	ft_print_stack(t_stack *stack);
 int		ft_atol(const char *str, long *result);
+int		ft_ascending(int a, int b);
 
 //OPERATIONS
 void	ft_sa(t_stack *a);
@@ -60,4 +61,8 @@ int		ft_parse_int(const char *str, int *result);
 int		ft_is_duplicate_in_input(int *parsed_values, int index, int value);
 int		ft_error(int *parsed_values);
 int		ft_parse_and_check_input(int argc, char **argv, int *parsed_values);
+
+//CHECKER
+int		ft_input_is_sorted(int *parsed_values, int array_len);
+
 #endif
