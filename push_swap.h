@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 15:51:31 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/11 12:33:20 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
+
+typedef struct s_rank {
+	int	value;
+	int	original_pos;
+}		t_rank;
 
 typedef struct s_node
 {
@@ -41,6 +46,7 @@ void	ft_init_stack(t_node **top, t_node **bottom, int value, int position);
 void	ft_print_stack(t_stack *stack);
 int		ft_atol(const char *str, long *result);
 int		ft_ascending(int a, int b);
+int		ft_compare_value(const void *a, const void *b);
 
 //OPERATIONS
 void	ft_sa(t_stack *a);
@@ -63,6 +69,7 @@ int		ft_error(int *parsed_values);
 int		ft_parse_and_check_input(int argc, char **argv, int *parsed_values);
 int		ft_initialize(t_stack **a, t_stack **b, int *parsed_values, 
 			int array_len);
+void	ft_normalize_data(int *parsed_values, int len, t_stack *a);
 
 //CHECKER
 int		ft_input_is_sorted(int *parsed_values, int array_len);

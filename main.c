@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:42:26 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 16:07:02 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/11 12:32:17 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	main(int argc, char **argv)
 {	
 	int	*parsed_values;
+	t_node	*cur;
 	t_stack *a;
 	t_stack *b;
 
@@ -28,6 +29,21 @@ int	main(int argc, char **argv)
 	ft_initialize(&a, &b, parsed_values, argc - 1);
 	printf("stack a\n");
 	ft_print_stack(a);
+	printf("positions a\n");
+	cur = a->top;
+	while(cur)
+	{
+		printf("%d\n", cur->position);
+		cur = cur->next;
+	}
+	printf("new positions\n");
+	ft_normalize_data(parsed_values, argc - 1, a);
+	cur = a->top;
+	while(cur)
+	{
+		printf("%d\n", cur->position);
+		cur = cur->next;
+	}
 	free(parsed_values);
 	return (0);
 }

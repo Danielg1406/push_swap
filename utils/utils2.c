@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:20:23 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 11:06:31 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/11 12:10:21 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,9 @@ int	ft_ascending(int a, int b)
 	if (a < b)
 		return (1);
 	return (0);
+}
+
+int	ft_compare_value(const void *a, const void *b)
+{
+	return (*(int *)a - *(int *)b);
 }
