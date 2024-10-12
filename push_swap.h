@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/12 13:37:53 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/12 14:05:08 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,12 @@ typedef struct s_stack
 }			t_stack;
 
 // UTILS
-void	ft_free_stack(t_node *top, t_node *bottom);
 void	ft_delete_node(t_node *node);
 void	ft_insert_beggining(t_node **top, int value, int position);
 void	ft_insert_end(t_node **bottom, int value, int position);
 void	ft_init_stack(t_node **top, t_node **bottom, int value, int position);
 void	ft_print_stack(t_stack *stack);
+void	ft_free_stack(t_stack *stack);
 int		ft_atol(const char *str, long *result);
 int		ft_ascending(int a, int b);
 int		ft_compare_value(const void *a, const void *b);

@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:20:23 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/11 12:10:21 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/12 14:05:33 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,19 @@ int	ft_ascending(int a, int b)
 int	ft_compare_value(const void *a, const void *b)
 {
 	return (*(int *)a - *(int *)b);
+}
+
+void	ft_free_stack(t_stack *stack)
+{
+	t_node	*cur;
+	t_node	*temp;
+
+	cur = stack->top;
+	while (cur)
+	{
+		temp = cur;
+		cur = cur->next;
+		free(temp);
+	}
+	free(stack);
 }

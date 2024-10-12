@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:42:26 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/11 12:32:17 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/12 14:04:12 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ int	main(int argc, char **argv)
 		cur = cur->next;
 	}
 	free(parsed_values);
+	ft_free_stack(a);
+	ft_free_stack(b);
 	return (0);
 }
