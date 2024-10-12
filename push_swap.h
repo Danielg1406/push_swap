@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/11 12:33:20 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:37:53 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,9 @@ void	ft_normalize_data(int *parsed_values, int len, t_stack *a);
 
 //CHECKER
 int		ft_input_is_sorted(int *parsed_values, int array_len);
+
+//SORT
+void	ft_qsort(void *base, size_t nmeb, size_t size, 
+			int (compar)(const void *, const void *));
 
 #endif

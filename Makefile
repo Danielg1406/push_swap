@@ -10,6 +10,7 @@ OPERATIONS_DIR = operations
 UTILS_DIR = utils
 PARSING_DIR = parsing
 CHECKER_DIR = checker
+SORT_DIR = sorting
 
 HEADER = push_swap.h
 
@@ -23,7 +24,8 @@ SRCS = main.c \
 	$(UTILS_DIR)/utils2.c \
        	$(PARSING_DIR)/parsing.c \
 	$(PARSING_DIR)/initialize.c \
-	$(CHECKER_DIR)/checker.c
+	$(CHECKER_DIR)/checker.c \
+	$(SORT_DIR)/ft_qsort.c
 
 # Generate object files from source files
 OBJS = $(SRCS:%.c=%.o)

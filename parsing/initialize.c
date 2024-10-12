@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 11:40:13 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/11 12:52:23 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:38:43 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,6 @@ int	*ft_assign_new_position(int *parsed_values, int *sorted_values, int len)
 	return (new_positions);
 }
 
-//TODO: Create own qsort function
 void	ft_normalize_data(int *parsed_values, int len, t_stack *a)
 {
 	int		*sorted_values;
@@ -69,7 +68,7 @@ void	ft_normalize_data(int *parsed_values, int len, t_stack *a)
 	if (!sorted_values)
 		return ;
 	ft_memcpy(sorted_values, parsed_values, len * sizeof(int));
-	qsort(sorted_values, len, sizeof(int), ft_compare_value);
+	ft_qsort(sorted_values, len, sizeof(int), ft_compare_value);
 	new_positions = ft_assign_new_position(parsed_values, sorted_values, len);
 	if (!new_positions)
 		return ;
