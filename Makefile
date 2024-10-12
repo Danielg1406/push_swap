@@ -25,7 +25,8 @@ SRCS = main.c \
        	$(PARSING_DIR)/parsing.c \
 	$(PARSING_DIR)/initialize.c \
 	$(CHECKER_DIR)/checker.c \
-	$(SORT_DIR)/ft_qsort.c
+	$(SORT_DIR)/ft_qsort.c \
+	$(SORT_DIR)/ft_radixsort.c
 
 # Generate object files from source files
 OBJS = $(SRCS:%.c=%.o)

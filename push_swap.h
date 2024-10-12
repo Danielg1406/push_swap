@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/12 14:05:08 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/12 17:51:52 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
-
-typedef struct s_rank {
-	int	value;
-	int	original_pos;
-}		t_rank;
 
 typedef struct s_node
 {
@@ -77,5 +72,6 @@ int		ft_input_is_sorted(int *parsed_values, int array_len);
 //SORT
 void	ft_qsort(void *base, size_t nmeb, size_t size, 
 			int (compar)(const void *, const void *));
+void	ft_radix(t_stack *a, t_stack *b);
 
 #endif
