@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	ft_rra(t_stack *a)
+void	ft_rra(t_stack *a, int flag)
 {
 	t_node	*new_bottom;
 
@@ -23,10 +23,11 @@ void	ft_rra(t_stack *a)
 	a->bottom->next = NULL;
 	ft_insert_beggining(&a->top, new_bottom->data, new_bottom->position);
 	ft_delete_node(new_bottom);
-	printf("rra\n");
+	if(flag)
+		printf("rra\n");
 }
 
-void	ft_rrb(t_stack *b)
+void	ft_rrb(t_stack *b, int flag)
 {
 	t_node	*new_bottom;
 
@@ -37,14 +38,15 @@ void	ft_rrb(t_stack *b)
 	b->bottom->next = NULL;
 	ft_insert_beggining(&b->top, new_bottom->data, new_bottom->position);
 	ft_delete_node(new_bottom);
-	printf("rrb\n");
+	if(flag)
+		printf("rrb\n");
 }
 
 void	ft_rrr(t_stack *a, t_stack *b)
 {
 	if (!a || !b)
 		return ;
-	ft_rra(a);
-	ft_rrb(b);
+	ft_rra(a, 0);
+	ft_rrb(b, 0);
 	printf("rrr\n");
 }

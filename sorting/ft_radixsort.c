@@ -65,7 +65,7 @@ void	ft_radix(t_stack *a, t_stack *b)
 			if (((a->top->position >> i) & 1) == 0)
 				ft_pb(b, a);
 			else
-				ft_ra(a);
+				ft_ra(a, 1);
 		}
 		while (b->top != NULL)
 			ft_pa(a, b);
