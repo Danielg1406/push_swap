@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 14:58:27 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/16 16:58:50 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/16 18:17:11 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,50 +47,22 @@ int	ft_max_bits(t_stack *stack)
 	return (max_bits);
 }
 
-int	ft_define_bit_to_push(t_stack *a, int size, int i)
-{
-	t_node	*cur;
-	int	count_zeros;
-	int	count_ones;
-	int	j;
-
-	j = 0;
-	count_zeros = 0;
-	count_ones = 0;
-	cur = a->top;
-	while (j < size)
-	{
-		if (((cur->position >> i) & 1) == 0)
-			count_zeros++;
-		else
-			count_ones++;
-		cur = cur->next;
-		j++;
-	}
-	if (count_zeros <= count_ones)
-		return (0);
-	else
-		return (1);
-}
-
 void	ft_radix(t_stack *a, t_stack *b)
 {
 	int	i;
 	int	j;
 	int	max_bits;
 	int	size;
-	int	bit_to_push;
 
 	i = 0;
 	max_bits = ft_max_bits(a);
 	while (i < max_bits)
 	{
 		size = ft_stack_size(a);
-		bit_to_push = ft_define_bit_to_push(a, size, i);
 		j = 0;
-		while (j < size)
+		while (!is_sorted(a) && (j < size))
 		{
-			if (((a->top->position >> i) & 1) == bit_to_push)
+			if (((a->top->position >> i) & 1) == 0)
 				ft_pb(b, a);
 			else
 				ft_ra(a, 1);
