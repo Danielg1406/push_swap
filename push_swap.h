@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/12 17:51:52 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:12:07 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_free_stack(t_stack *stack);
 int		ft_atol(const char *str, long *result);
 int		ft_ascending(int a, int b);
 int		ft_compare_value(const void *a, const void *b);
-int 		is_sorted(t_stack *stack);
+int		is_sorted(t_stack *stack);
 
 //OPERATIONS
 void	ft_sa(t_stack *a, int flag);

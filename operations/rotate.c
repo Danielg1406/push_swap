@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:43:10 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 15:57:20 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:12:49 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_ra(t_stack *a, int flag)
 	a->top->previous = NULL;
 	ft_insert_end(&a->bottom, new_top->data, new_top->position);
 	ft_delete_node(new_top);
-	if(flag)
+	if (flag)
 		printf("ra\n");
 }
 
@@ -38,7 +38,7 @@ void	ft_rb(t_stack *b, int flag)
 	b->top->previous = NULL;
 	ft_insert_end(&b->bottom, new_top->data, new_top->position);
 	ft_delete_node(new_top);
-	if(flag)
+	if (flag)
 		printf("rb\n");
 }
 

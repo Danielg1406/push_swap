@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 14:58:27 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/12 17:57:13 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:01:27 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_stack_size(t_stack *stack)
 
 	size = 0;
 	cur = stack->top;
-	while(cur)
+	while (cur)
 	{
 		size++;
 		cur = cur->next;
@@ -59,7 +59,6 @@ void	ft_optimize_rotation(t_stack *a, t_stack *b)
 			ft_rb(b, 1);
 		else
 			break ;
-
 	}
 }
 

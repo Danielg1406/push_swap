@@ -1,10 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/16 12:00:47 by dgomez-a          #+#    #+#             */
+/*   Updated: 2024/10/16 12:02:26 by dgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	condition_to_rotate_both(t_stack *a, t_stack *b)
 {
 	if (a->top != NULL && b->top != NULL)
 	{
-		if (a->top->position > a->top->next->position && b->top->position > b->top->next->position)
+		if (a->top->position > a->top->next->position && 
+			b->top->position > b->top->next->position)
 			return (1);
 	}
 	return (0);
@@ -32,7 +45,7 @@ int	condition_for_rb(t_stack *b)
 
 int	is_sorted(t_stack *stack)
 {
-	t_node *cur;
+	t_node	*cur;
 
 	cur = stack->top;
 	if (!cur || !cur->next)

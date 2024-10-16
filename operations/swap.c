@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:09:31 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/08 17:31:52 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:13:01 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_sb(t_stack *b, int flag)
 	b->top->previous = NULL;
 	b->top->next = temp;
 	temp->previous = b->top;
-	if(flag)
+	if (flag)
 		printf("sb\n");
 }
 
