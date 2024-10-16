@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 14:58:27 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/16 12:01:27 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/16 16:58:50 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,30 @@ int	ft_max_bits(t_stack *stack)
 	return (max_bits);
 }
 
-void	ft_optimize_rotation(t_stack *a, t_stack *b)
+int	ft_define_bit_to_push(t_stack *a, int size, int i)
 {
-	while (a->top && b->top)
+	t_node	*cur;
+	int	count_zeros;
+	int	count_ones;
+	int	j;
+
+	j = 0;
+	count_zeros = 0;
+	count_ones = 0;
+	cur = a->top;
+	while (j < size)
 	{
-		if (condition_to_rotate_both(a, b))
-			ft_rrr(a, b);
-		else if (condition_for_ra(a))
-			ft_ra(a, 1);
-		else if (condition_for_rb(b))
-			ft_rb(b, 1);
+		if (((cur->position >> i) & 1) == 0)
+			count_zeros++;
 		else
-			break ;
+			count_ones++;
+		cur = cur->next;
+		j++;
 	}
+	if (count_zeros <= count_ones)
+		return (0);
+	else
+		return (1);
 }
 
 void	ft_radix(t_stack *a, t_stack *b)
@@ -68,21 +79,25 @@ void	ft_radix(t_stack *a, t_stack *b)
 	int	j;
 	int	max_bits;
 	int	size;
+	int	bit_to_push;
 
-	i = -1;
+	i = 0;
 	max_bits = ft_max_bits(a);
-	size = ft_stack_size(a);
-	while (++i < max_bits)
+	while (i < max_bits)
 	{
-		j = -1;
-		while (++j < size)
+		size = ft_stack_size(a);
+		bit_to_push = ft_define_bit_to_push(a, size, i);
+		j = 0;
+		while (j < size)
 		{
-			if (((a->top->position >> i) & 1) == 0)
+			if (((a->top->position >> i) & 1) == bit_to_push)
 				ft_pb(b, a);
 			else
 				ft_ra(a, 1);
+			j++;
 		}
-		while (b->top != NULL)
-			ft_pa(a, b);
+		while (b->top)
+			ft_pa(a,b);
+		i++;
 	}
 }

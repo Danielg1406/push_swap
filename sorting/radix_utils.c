@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:00:47 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/16 12:02:26 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/16 15:45:27 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	condition_to_rotate_both(t_stack *a, t_stack *b)
 {
-	if (a->top != NULL && b->top != NULL)
+	if (a->top && a->top->next && b->top && b->top->next)
 	{
-		if (a->top->position > a->top->next->position && 
-			b->top->position > b->top->next->position)
+		if ((a->top->position > a->top->next->position) && 
+			(b->top->position > b->top->next->position))
 			return (1);
 	}
 	return (0);
@@ -25,7 +25,7 @@ int	condition_to_rotate_both(t_stack *a, t_stack *b)
 
 int	condition_for_ra(t_stack *a)
 {
-	if (a->top != NULL && a->top->next != NULL)
+	if (a->top && a->top->next)
 	{
 		if (a->top->position > a->top->next->position)
 			return (1);
@@ -35,7 +35,7 @@ int	condition_for_ra(t_stack *a)
 
 int	condition_for_rb(t_stack *b)
 {
-	if (b->top != NULL && b->top->next != NULL)
+	if (b->top && b->top->next)
 	{
 		if (b->top->position > b->top->next->position)
 			return (1);
