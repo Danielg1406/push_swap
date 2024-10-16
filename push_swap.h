@@ -42,6 +42,7 @@ void	ft_free_stack(t_stack *stack);
 int		ft_atol(const char *str, long *result);
 int		ft_ascending(int a, int b);
 int		ft_compare_value(const void *a, const void *b);
+int 		is_sorted(t_stack *stack);
 
 //OPERATIONS
 void	ft_sa(t_stack *a, int flag);
@@ -73,5 +74,8 @@ int		ft_input_is_sorted(int *parsed_values, int array_len);
 void	ft_qsort(void *base, size_t nmeb, size_t size, 
 			int (compar)(const void *, const void *));
 void	ft_radix(t_stack *a, t_stack *b);
+int		condition_to_rotate_both(t_stack *a, t_stack *b);
+int		condition_for_ra(t_stack *a);
+int		condition_for_rb(t_stack *b);
 
 #endif

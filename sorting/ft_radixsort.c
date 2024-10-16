@@ -47,6 +47,22 @@ int	ft_max_bits(t_stack *stack)
 	return (max_bits);
 }
 
+void	ft_optimize_rotation(t_stack *a, t_stack *b)
+{
+	while (a->top && b->top)
+	{
+		if (condition_to_rotate_both(a, b))
+			ft_rrr(a, b);
+		else if (condition_for_ra(a))
+			ft_ra(a, 1);
+		else if (condition_for_rb(b))
+			ft_rb(b, 1);
+		else
+			break ;
+
+	}
+}
+
 void	ft_radix(t_stack *a, t_stack *b)
 {
 	int	i;
