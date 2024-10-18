@@ -74,6 +74,7 @@ int		ft_input_is_sorted(int *parsed_values, int array_len);
 void	ft_qsort(void *base, size_t nmeb, size_t size, 
 			int (compar)(const void *, const void *));
 void	ft_radix(t_stack *a, t_stack *b);
+void	ft_sort_less_five(t_stack *a, t_stack *b, int argc);
 int		condition_to_rotate_both(t_stack *a, t_stack *b);
 int		condition_for_ra(t_stack *a);
 int		condition_for_rb(t_stack *b);

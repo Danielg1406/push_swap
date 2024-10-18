@@ -26,6 +26,8 @@ void	ft_sort(t_stack *a, t_stack *b, int argc)
 {
 	if (argc == 2)
 		ft_sa(a, 1);
+	else if (argc > 2 && argc <= 5)
+		ft_sort_less_five(a, b, argc);
 	else
 		ft_radix(a, b);
 }
@@ -69,7 +71,7 @@ int	main(int argc, char **argv)
 	else
 		arg_count = argc - 1;
 	parsed_values = malloc(arg_count * sizeof(int));
-	if (!parsed_values || !ft_parse_and_check_input(arg_count, argv, parsed_values) 
+	if (!parsed_values || !ft_parse_and_check_input(arg_count + 1, argv, parsed_values) 
 		|| ft_input_is_sorted(parsed_values, arg_count))
 		return (1);
 	ft_initialize(&a, &b, parsed_values, arg_count);
