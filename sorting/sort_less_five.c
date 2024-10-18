@@ -13,10 +13,22 @@ void	ft_sort_three(t_stack *a)
 	}
 }
 
-void	ft_sort_four(t_stack *a)
+void	ft_sort_four(t_stack *a, t_stack *b)
 {
-	printf("sort 4\n");
-	printf("first a: %d\n", a->top->position);
+	while (!is_sorted(a))
+	{
+		if (a->bottom->position == 4)
+			ft_rra(a, 1);
+		if (a->top->position == 4)
+		{
+			ft_pb(b, a);
+			ft_sort_three(a);
+			ft_pa(a,b);
+			ft_ra(a, 1);
+		}
+		else
+			ft_ra(a, 1);
+	}
 }
 
 void	ft_sort_five(t_stack *a, t_stack *b)
@@ -31,7 +43,7 @@ void	ft_sort_less_five(t_stack *a, t_stack *b, int argc)
 	if (argc == 3)
 		ft_sort_three(a);
 	else if (argc == 4)
-		ft_sort_four(a);
+		ft_sort_four(a, b);
 	else
 		ft_sort_five(a, b);
 }
