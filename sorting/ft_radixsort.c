@@ -47,6 +47,28 @@ int	ft_max_bits(t_stack *stack)
 	return (max_bits);
 }
 
+void	ft_radix_stack_b(t_stack *a, t_stack *b, int max_bits, int bit)
+{
+	int	size;
+	int	i;
+
+	size = ft_stack_size(b);
+	i = 0;
+	while (i < size && bit <= max_bits && !is_sorted(a))
+	{
+		if (((b->top->position >> bit) & 1) == 0)
+			ft_rb(b, 1);
+		else
+			ft_pa(a, b);
+		i++;
+	}
+	if (is_sorted(a))
+	{
+		while (b->top)
+			ft_pa(a, b);
+	}
+}
+
 void	ft_radix(t_stack *a, t_stack *b)
 {
 	int	i;
@@ -68,8 +90,9 @@ void	ft_radix(t_stack *a, t_stack *b)
 				ft_ra(a, 1);
 			j++;
 		}
-		while (b->top)
-			ft_pa(a,b);
+		ft_radix_stack_b(a, b, max_bits, i + 1);
 		i++;
 	}
+	while (b->top)
+		ft_pa(a,b);
 }
