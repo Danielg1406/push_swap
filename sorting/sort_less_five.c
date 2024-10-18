@@ -22,7 +22,8 @@ void	ft_sort_four(t_stack *a)
 void	ft_sort_five(t_stack *a, t_stack *b)
 {
 	printf("sort 5\n");
-	printf("first a: %d first b: %d\n", a->top->position, b->top->position);
+	if (a->top && b->top)
+		printf("first a: %d first b: %d\n", a->top->position, b->top->position);
 }
 
 void	ft_sort_less_five(t_stack *a, t_stack *b, int argc)

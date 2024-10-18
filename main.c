@@ -16,9 +16,9 @@ void	ft_free_elements(t_stack *a, t_stack *b, int *parsed_values)
 {
 	if (parsed_values)
 		free(parsed_values);
-	if (a)
+	if (a != NULL)
 		ft_free_stack(a);
-	if (b)
+	if (b != NULL)
 		ft_free_stack(b);
 }
 
