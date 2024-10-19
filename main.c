@@ -32,52 +32,58 @@ void	ft_sort(t_stack *a, t_stack *b, int argc)
 		ft_radix(a, b);
 }
 
-// int	ft_count_split(char **split)
-// {
-// 	int	count;
+int	ft_count_split(char **split)
+{
+	int	count;
 
-// 	count = 0;
-// 	while (split[count])
-// 		count++;
-// 	return (count);
-// }
+	count = 0;
+	while (split[count])
+		count++;
+	return (count);
+}
 
-// char	**ft_handle_args(int *argc, char **argv, int *split)
-// {
-// 	if (*argc == 2 && ft_strchr(argv[1], ' ') != NULL)
-// 	{
-// 		*split = 1;
-// 		argv = ft_split(argv[1], ' ');
-// 		*argc = ft_count_split(argv);
-// 	}
-// 	return (argv);
-// }
+char	**ft_handle_args(int *argc, char **argv, int *split)
+{
+	if (*argc == 2 && ft_strchr(argv[1], ' ') != NULL)
+	{
+		printf("split\n");
+		*split = 1;
+		argv = ft_split(argv[1], ' ');
+		*argc = ft_count_split(argv);
+	}
+	return (argv);
+}
 
-// TODO: Fix memory leaks, fix Norminette
+// TODO: Fix when using with checker, fix Norminette
 int	main(int argc, char **argv)
 {
 	int		*parsed_values;
 	t_stack	*a;
 	t_stack	*b;
+	int		split;
+	int		new_arc;
 
-	// int		split;
-	// int		arg_count;
-	// split = 0;
-	if (argc < 3)
+	new_arc = 0;
+	split = 0;
+	if (argc < 2)
 		return (1);
-	// argv = ft_handle_args(&argc, argv, &split);
-	// if (split)
-	// 	arg_count = ft_count_split(argv);
-	// else
-	// 	arg_count = argc - 1;
-	parsed_values = malloc((argc - 1) * sizeof(int));
-	if (!parsed_values || !ft_parse_and_check_input(argc, argv, parsed_values))
-		return (1);
-	ft_initialize(&a, &b, parsed_values, argc - 1);
-	ft_normalize_data(parsed_values, argc - 1, a);
-	ft_sort(a, b, argc - 1);
-	ft_free_elements(a, b, parsed_values);
-	// if (split)
-	// 	ft_free_split(argv, 0);
-	return (0);
+	else
+	{
+		argv = ft_handle_args(&argc, argv, &split);
+		if (split)
+			new_arc = argc + 1;
+		else
+			new_arc = argc;
+		parsed_values = malloc((new_arc - 1) * sizeof(int));
+		if (!parsed_values || !ft_parse_and_check_input(new_arc, argv,
+				parsed_values, split))
+			return (1);
+		ft_initialize(&a, &b, parsed_values, new_arc - 1);
+		ft_normalize_data(parsed_values, new_arc - 1, a);
+		ft_sort(a, b, new_arc - 1);
+		ft_free_elements(a, b, parsed_values);
+		if (split)
+			ft_free_split(argv, new_arc);
+		return (0);
+	}
 }

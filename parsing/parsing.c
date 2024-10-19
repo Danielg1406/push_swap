@@ -61,13 +61,20 @@ int	ft_error(int *parsed_values)
 
 /* TODO: Fix seg fault when giving "- " or "+ " or " 2",
 anything with quotes and spaces */
-int	ft_parse_and_check_input(int argc, char **argv, int *parsed_values)
+int	ft_parse_and_check_input(int argc, char **argv, int *parsed_values,
+		int split)
 {
 	int	value;
 	int	i;
 	int	j;
 
-	i = 0;
+	if (split)
+	{
+		i = -1;
+		argc -= 1;
+	}
+	else
+		i = 0;
 	j = 0;
 	while (++i < argc)
 	{
@@ -78,6 +85,9 @@ int	ft_parse_and_check_input(int argc, char **argv, int *parsed_values)
 		parsed_values[j++] = value;
 	}
 	if (ft_input_is_sorted(parsed_values, argc - 1))
-		return (ft_error(parsed_values));
+	{
+		free(parsed_values);
+		return (0);
+	}
 	return (1);
 }
