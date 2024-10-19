@@ -46,9 +46,13 @@ char	**ft_handle_args(int *argc, char **argv, int *split)
 {
 	if (*argc == 2 && ft_strchr(argv[1], ' ') != NULL)
 	{
-		printf("split\n");
 		*split = 1;
 		argv = ft_split(argv[1], ' ');
+		if (!argv)
+		{
+			ft_putendl_fd("Error", 2);
+			exit(EXIT_FAILURE);
+		}
 		*argc = ft_count_split(argv);
 	}
 	return (argv);
@@ -57,33 +61,26 @@ char	**ft_handle_args(int *argc, char **argv, int *split)
 // TODO: Fix when using with checker, fix Norminette
 int	main(int argc, char **argv)
 {
-	int		*parsed_values;
-	t_stack	*a;
-	t_stack	*b;
-	int		split;
-	int		new_arc;
+	int *parsed_values;
+	t_stack *a;
+	t_stack *b;
+	int split;
+	int new_argc;
 
-	new_arc = 0;
 	split = 0;
 	if (argc < 2)
 		return (1);
-	else
-	{
-		argv = ft_handle_args(&argc, argv, &split);
-		if (split)
-			new_arc = argc + 1;
-		else
-			new_arc = argc;
-		parsed_values = malloc((new_arc - 1) * sizeof(int));
-		if (!parsed_values || !ft_parse_and_check_input(new_arc, argv,
-				parsed_values, split))
-			return (1);
-		ft_initialize(&a, &b, parsed_values, new_arc - 1);
-		ft_normalize_data(parsed_values, new_arc - 1, a);
-		ft_sort(a, b, new_arc - 1);
-		ft_free_elements(a, b, parsed_values);
-		if (split)
-			ft_free_split(argv, new_arc);
-		return (0);
-	}
+	argv = ft_handle_args(&argc, argv, &split);
+	new_argc = argc + split;
+	parsed_values = malloc((new_argc - 1) * sizeof(int));
+	if (!parsed_values || !ft_parse_and_check_input(new_argc, argv,
+			parsed_values, split))
+		return (1);
+	ft_initialize(&a, &b, parsed_values, new_argc - 1);
+	ft_normalize_data(parsed_values, new_argc - 1, a);
+	ft_sort(a, b, new_argc - 1);
+	ft_free_elements(a, b, parsed_values);
+	if (split)
+		ft_free_split(argv, argc);
+	return (0);
 }
