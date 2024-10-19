@@ -48,7 +48,7 @@ int	ft_is_duplicate_in_input(int *parsed_values, int index, int value)
 			return (1);
 		i++;
 	}
-	return (0); 
+	return (0);
 }
 
 int	ft_error(int *parsed_values)
@@ -59,7 +59,8 @@ int	ft_error(int *parsed_values)
 	return (0);
 }
 
-//TODO: Fix seg fault when giving "- " or "+ " or " 2", anything with quotes and spaces
+/* TODO: Fix seg fault when giving "- " or "+ " or " 2",
+anything with quotes and spaces */
 int	ft_parse_and_check_input(int argc, char **argv, int *parsed_values)
 {
 	int	value;
@@ -76,5 +77,7 @@ int	ft_parse_and_check_input(int argc, char **argv, int *parsed_values)
 			return (ft_error(parsed_values));
 		parsed_values[j++] = value;
 	}
+	if (ft_input_is_sorted(parsed_values, argc - 1))
+		return (ft_error(parsed_values));
 	return (1);
 }
