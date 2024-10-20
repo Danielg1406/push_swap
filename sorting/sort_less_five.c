@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 15:31:58 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/20 15:33:19 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/20 16:59:15 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,39 @@ void	ft_sort_four(t_stack *a, t_stack *b)
 	}
 }
 
+int	find_position(t_stack *a, int position)
+{
+	t_node	*current;
+	int		index;
+
+	current = a->top;
+	index = 0;
+	while (current)
+	{
+		if (current->position == position)
+			return (index);
+		current = current->next;
+		index++;
+	}
+	return (-1);
+}
+
 void	ft_sort_five(t_stack *a, t_stack *b)
 {
-	printf("sort 5\n");
-	if (a->top && b->top)
-		printf("first a: %d first b: %d\n", a->top->position, b->top->position);
+	int	pos;
+
+	pos = find_position(a, 5);
+	if (pos <= 2)
+		while (a->top->position != 5)
+			ft_ra(a, 1);
+	else
+		while (a->top->position != 5)
+			ft_rra(a, 1);
+	ft_pb(b, a);
+	ft_sort_four(a, b);
+	ft_pa(a, b);
+	ft_pa(a, b);
+	ft_ra(a, 1);
 }
 
 void	ft_sort_less_five(t_stack *a, t_stack *b, int argc)
