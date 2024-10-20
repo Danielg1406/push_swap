@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_less_five.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/20 15:31:58 by dgomez-a          #+#    #+#             */
+/*   Updated: 2024/10/20 15:33:19 by dgomez-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_sort_three(t_stack *a)
@@ -23,7 +35,7 @@ void	ft_sort_four(t_stack *a, t_stack *b)
 		{
 			ft_pb(b, a);
 			ft_sort_three(a);
-			ft_pa(a,b);
+			ft_pa(a, b);
 			ft_ra(a, 1);
 		}
 		else

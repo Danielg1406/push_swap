@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/16 12:12:07 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/20 16:00:29 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ int					ft_is_valid(const char *str);
 int					ft_parse_int(const char *str, int *result);
 int					ft_is_duplicate_in_input(int *parsed_values, int index,
 						int value);
-int					ft_error(int *parsed_values);
+int					ft_error(int *parsed_values, char **argv, 
+						int argc, int split);
 int					ft_parse_and_check_input(int argc, char **argv,
 						int *parsed_values, int split);
 int					ft_initialize(t_stack **a, t_stack **b, int *parsed_values,
@@ -74,8 +75,8 @@ void				ft_normalize_data(int *parsed_values, int len, t_stack *a);
 int					ft_input_is_sorted(int *parsed_values, int array_len);
 
 // SORT
-void				ft_qsort(void *base, size_t nmeb, size_t size,
-						int(compar)(const void *, const void *));
+void				ft_qsort(void *base, size_t nmeb, size_t size, 
+						int (compar)(const void*, const void*));
 void				ft_radix(t_stack *a, t_stack *b);
 void				ft_sort_less_five(t_stack *a, t_stack *b, int argc);
 #endif

@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:42:26 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/17 17:57:49 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/20 15:46:55 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,13 @@ char	**ft_handle_args(int *argc, char **argv, int *split)
 	return (argv);
 }
 
-// TODO: Fix when using with checker, fix Norminette
 int	main(int argc, char **argv)
 {
-	int *parsed_values;
-	t_stack *a;
-	t_stack *b;
-	int split;
-	int new_argc;
+	int		*parsed_values;
+	int		split;
+	int		new_argc;
+	t_stack	*a;
+	t_stack	*b;
 
 	split = 0;
 	if (argc < 2)
