@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 14:58:27 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/16 18:17:11 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/20 15:33:03 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	ft_radix(t_stack *a, t_stack *b)
 			j++;
 		}
 		while (b->top)
-			ft_pa(a,b);
+			ft_pa(a, b);
 		i++;
 	}
 }

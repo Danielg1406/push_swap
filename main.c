@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:42:26 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/17 17:57:49 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/20 15:46:55 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,21 @@ char	**ft_handle_args(int *argc, char **argv, int *split)
 	{
 		*split = 1;
 		argv = ft_split(argv[1], ' ');
+		if (!argv)
+		{
+			ft_putendl_fd("Error", 2);
+			exit(EXIT_FAILURE);
+		}
 		*argc = ft_count_split(argv);
 	}
 	return (argv);
 }
 
-//TODO: Fix memory leaks, fix Norminette
 int	main(int argc, char **argv)
 {
 	int		*parsed_values;
 	int		split;
-	int		arg_count;
+	int		new_argc;
 	t_stack	*a;
 	t_stack	*b;
 
@@ -66,19 +70,16 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (1);
 	argv = ft_handle_args(&argc, argv, &split);
-	if (split)
-		arg_count = ft_count_split(argv);
-	else
-		arg_count = argc - 1;
-	parsed_values = malloc(arg_count * sizeof(int));
-	if (!parsed_values || !ft_parse_and_check_input(arg_count + 1, argv, parsed_values) 
-		|| ft_input_is_sorted(parsed_values, arg_count))
+	new_argc = argc + split;
+	parsed_values = malloc((new_argc - 1) * sizeof(int));
+	if (!parsed_values || !ft_parse_and_check_input(new_argc, argv,
+			parsed_values, split))
 		return (1);
-	ft_initialize(&a, &b, parsed_values, arg_count);
-	ft_normalize_data(parsed_values, arg_count, a);
-	ft_sort(a, b, arg_count);
+	ft_initialize(&a, &b, parsed_values, new_argc - 1);
+	ft_normalize_data(parsed_values, new_argc - 1, a);
+	ft_sort(a, b, new_argc - 1);
 	ft_free_elements(a, b, parsed_values);
 	if (split)
-		ft_free_split(argv, 0);
+		ft_free_split(argv, argc);
 	return (0);
 }
