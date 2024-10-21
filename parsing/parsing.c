@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:44:36 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/21 10:32:26 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/20 15:57:23 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,11 @@ int	ft_parse_and_check_input(int argc, char **argv, int *parsed_values,
 		if (ft_is_duplicate_in_input(parsed_values, j, value))
 			return (ft_error(parsed_values, argv, argc, split));
 		parsed_values[j++] = value;
+	}
+	if (ft_input_is_sorted(parsed_values, argc - 1))
+	{
+		free(parsed_values);
+		return (0);
 	}
 	return (1);
 }
