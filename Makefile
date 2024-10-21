@@ -14,7 +14,6 @@ SORT_DIR = sorting
 
 HEADER = push_swap.h
 
-# List all source files from the main directory, operations, and utils
 SRCS = main.c \
       	$(OPERATIONS_DIR)/push.c \
       	$(OPERATIONS_DIR)/swap.c \
@@ -30,7 +29,7 @@ SRCS = main.c \
 	$(SORT_DIR)/ft_radixsort.c \
 	$(SORT_DIR)/sort_less_five.c
 
-# Generate object files from source files
+
 OBJS = $(SRCS:%.c=%.o)
 
 RM = rm -f

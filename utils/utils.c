@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 09:21:55 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/10 16:26:51 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:09:38 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_init_stack(t_node **top, t_node **bottom, int value, int position)
 	*top = new;
 	*bottom = new;
 }
-
+/*
 void	ft_print_stack(t_stack *stack)
 {
 	t_node	*cur;
@@ -87,4 +87,4 @@ void	ft_print_stack(t_stack *stack)
 		printf("%d\n", cur->data);
 		cur = cur->next;
 	}
-}
+}*/

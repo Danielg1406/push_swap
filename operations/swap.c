@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 19:09:31 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/16 12:13:01 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/20 17:08:59 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_sa(t_stack *a, int flag)
 	a->top->next = temp;
 	temp->previous = a->top;
 	if (flag)
-		printf("sa\n");
+		write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_stack *b, int flag)
@@ -45,7 +45,7 @@ void	ft_sb(t_stack *b, int flag)
 	b->top->next = temp;
 	temp->previous = b->top;
 	if (flag)
-		printf("sb\n");
+		write(1, "sb\n", 3);
 }
 
 void	ft_ss(t_stack *a, t_stack *b)
@@ -54,5 +54,5 @@ void	ft_ss(t_stack *a, t_stack *b)
 		return ;
 	ft_sa(a, 0);
 	ft_sb(b, 0);
-	printf("ss");
+	write(1, "ss\n", 3);
 }
