@@ -83,7 +83,7 @@ int	ft_parse_and_check_input(int argc, char **argv, int *parsed_values,
 			return (ft_error(parsed_values, argv, argc, split));
 		parsed_values[j++] = value;
 	}
-	if (ft_input_is_sorted(parsed_values, argc - 1))
+	if (ft_input_is_sorted(parsed_values, argc - 1, split))
 	{
 		free(parsed_values);
 		return (0);

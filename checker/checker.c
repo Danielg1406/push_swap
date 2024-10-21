@@ -11,11 +11,14 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
-int	ft_input_is_sorted(int *parsed_values, int array_len)
+int	ft_input_is_sorted(int *parsed_values, int array_len, int split)
 {
 	int	i;
 
+	if (split)
+		array_len += 1;
 	i = 0;
 	while (i < array_len - 1)
 	{
@@ -23,5 +26,6 @@ int	ft_input_is_sorted(int *parsed_values, int array_len)
 			return (0);
 		i++;
 	}
+	printf("is sorted\n");
 	return (1);
 }
