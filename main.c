@@ -6,20 +6,18 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:42:26 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/20 15:46:55 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:57:14 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free_elements(t_stack *a, t_stack *b, int *parsed_values)
+void	ft_free_elements(int *parsed_values, char **argv, int argc, int split)
 {
 	if (parsed_values)
 		free(parsed_values);
-	if (a != NULL)
-		ft_free_stack(a);
-	if (b != NULL)
-		ft_free_stack(b);
+	if (split)
+		ft_free_split(argv, argc);
 }
 
 void	ft_sort(t_stack *a, t_stack *b, int argc)
@@ -78,8 +76,8 @@ int	main(int argc, char **argv)
 	ft_initialize(&a, &b, parsed_values, new_argc - 1);
 	ft_normalize_data(parsed_values, new_argc - 1, a);
 	ft_sort(a, b, new_argc - 1);
-	ft_free_elements(a, b, parsed_values);
-	if (split)
-		ft_free_split(argv, argc);
+	ft_free_elements(parsed_values, argv, new_argc, split);
+	ft_free_stack(a);
+	ft_free_stack(b);
 	return (0);
 }

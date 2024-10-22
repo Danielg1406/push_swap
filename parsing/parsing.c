@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:44:36 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/20 15:57:23 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:57:50 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	ft_parse_and_check_input(int argc, char **argv, int *parsed_values,
 	}
 	if (ft_input_is_sorted(parsed_values, argc - 1, split))
 	{
-		free(parsed_values);
+		ft_free_elements(parsed_values, argv, argc, split);
 		return (0);
 	}
 	return (1);

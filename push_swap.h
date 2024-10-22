@@ -6,7 +6,7 @@
 /*   By: dgomez-a <dgomez-a@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:33:48 by dgomez-a          #+#    #+#             */
-/*   Updated: 2024/10/20 17:10:41 by dgomez-a         ###   ########.fr       */
+/*   Updated: 2024/10/22 10:59:39 by dgomez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void				ft_insert_end(t_node **bottom, int value, int position);
 void				ft_init_stack(t_node **top, t_node **bottom, int value,
 						int position);
 void				ft_free_stack(t_stack *stack);
+void				ft_free_elements(int *parsed_values, char **argv, 
+						int argc, int split);
+
 int					ft_atol(const char *str, long *result);
 int					ft_ascending(int a, int b);
 int					ft_compare_value(const void *a, const void *b);
@@ -76,7 +79,7 @@ int					ft_input_is_sorted(int *parsed_values, int array_len,
 
 // SORT
 void				ft_qsort(void *base, size_t nmeb, size_t size,
-						int(compar)(const void *, const void *));
+						int (compar)(const void *, const void *));
 void				ft_radix(t_stack *a, t_stack *b);
 void				ft_sort_less_five(t_stack *a, t_stack *b, int argc);
 #endif
